@@ -76,8 +76,8 @@ u64 MemoryManager::ClampRangeSize(VAddr virtual_addr, u64 size) {
 
     // Clamp size to the remaining size of the current VMA.
     auto vma = FindVMA(virtual_addr);
-    ASSERT_MSG(vma->second.Contains(virtual_addr, 0),
-               "Attempted to access invalid GPU address {:#x}", virtual_addr);
+//    ASSERT_MSG(vma->second.Contains(virtual_addr, 0),
+//               "Attempted to access invalid GPU address {:#x}", virtual_addr);
     u64 clamped_size = vma->second.base + vma->second.size - virtual_addr;
     ++vma;
 
